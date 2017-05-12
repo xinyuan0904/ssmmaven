@@ -1,2 +1,2 @@
 # ssmmaven
-springmvc+maven+mybatis
+springmvc+maven
