@@ -22,25 +22,10 @@ public class UserServiceImpl implements IUserService{
 
 	@Autowired
 	private IUserDao userDao;
-	/**
-	 * (non Javadoc) 
-	 * <p>Title: getUserList</p> 
-	 * <p>Description: </p> 
-	 * @return 
-	 * @see pers.yuan.maven.service.IUserService#getUserList()
-	 */
 	@Override
 	public List<User> getUserList() {
 		return this.userDao.getUserList();
 	}
-	/**
-	 * (non Javadoc) 
-	 * <p>Title: getUserByAccount</p> 
-	 * <p>Description: </p> 
-	 * @param account
-	 * @return 
-	 * @see pers.yuan.maven.service.IUserService#getUserByAccount(java.lang.String)
-	 */
 	
 	@Override
 	public User getUserByAccount(String account) {

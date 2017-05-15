@@ -11,6 +11,8 @@
  	<mvc:annotation-driven />
   	<context:component-scan base-package="pers.yuan" use-default-filters="false">
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Service"/>
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Repository"/>
 	</context:component-scan>
 	<!-- 静态资源跳过-->
 	<!-- 对模型视图名称的解析，在请求时模型视图名称添加前后缀 -->  

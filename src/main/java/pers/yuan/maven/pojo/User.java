@@ -10,13 +10,15 @@
 
 package pers.yuan.maven.pojo;
 
+import java.io.Serializable;
+
 /**
  * @ClassName User
  * @author yuan
  * @version 1.0
  */
-
-public class User {
+public class User implements Serializable{
+	private static final long serialVersionUID = 1L;
 	private String userName;
 	private String account;
 	private String password;
