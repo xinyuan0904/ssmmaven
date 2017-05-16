@@ -2,16 +2,39 @@
 <html>
   <head>
     <title>user.html</title>
-	
+    <meta charset="utf-8">
     <meta name="keywords" content="keyword1,keyword2,keyword3">
     <meta name="description" content="this is my page">
     <meta name="content-type" content="text/html; charset=UTF-8">
     
     <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
-
+    <script src="https://cdn.bootcss.com/angular.js/1.6.3/angular.min.js"></script>
+    
   </head>
   
   <body>
-    This is my HTML page. <br>
+     <div ng-app="myApp" ng-controller="usersCtrl">
+     <table>
+     	<tr ng-repeat="x in users">
+     		<td>{{x.userName}}</td>
+     		<td>{{x.account}}</td>
+     	</tr>
+     </table>
+     </div>
+     <script>
+     	var app = angular.module("myApp",[]);
+     	app.controller("usersCtrl",function($scope,$http){
+     		$http.get("user/getUserList.do").then(function(result){
+     			console.log(result);
+     			var data = result.data;
+     			if( data.code == 200){
+     				console.log(data.users)
+     				//$scope.users = JSON.stringify(data.users);
+     				$scope.users = data.users;
+     				console.log($scope.users)
+     			}
+     		});
+     	});
+     </script>
   </body>
 </html>
