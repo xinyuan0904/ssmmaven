@@ -7,7 +7,7 @@ public class IndexController {
 
 	@RequestMapping("index")
 	public String index(){
-		return "indexs";
+		return "index";
 	}
 	
 }
